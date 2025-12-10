@@ -45,7 +45,7 @@ Set-StrictMode -Version Latest
 
 # Script location
 $ScriptPath = $PSScriptRoot
-$BicepFile = Join-Path $ScriptPath 'main.bicep'
+$BicepFile = Join-Path $ScriptPath 'bicep/main.bicep'
 $ParameterFile = Join-Path $ScriptPath "main.$Environment.bicepparam"
 
 # Generate resource group name if not provided

@@ -81,9 +81,10 @@ pwsh ./deploy.ps1 -Environment dev -WhatIf
 
 ```
 acs-solution/
-├── main.bicep              # Main orchestration template
-├── main.dev.bicepparam     # Development parameters
-├── main.prod.bicepparam    # Production parameters
+├── bicep/
+│   ├── main.bicep              # Main orchestration template
+│   ├── main.dev.bicepparam     # Development parameters
+│   ├── main.prod.bicepparam    # Production parameters
 ├── deploy.ps1              # Deployment script
 ├── README.md               # This file
 ├── modules/
