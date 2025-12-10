@@ -1,0 +1,36 @@
+# Bicep
+*.json
+!*.bicepparam
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# Node/TypeScript
+node_modules/
+dist/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Azure
+*.tfstate
+*.tfstate.*
+.terraform/
