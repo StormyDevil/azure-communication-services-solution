@@ -24,12 +24,6 @@ param baseName string = 'acssoln'
 param environment string = 'dev'
 
 @description('Azure region for resources. ACS is a global service but data residency matters.')
-@allowed([
-  'swedencentral'
-  'germanywestcentral'
-  'northeurope'
-  'westeurope'
-])
 param location string = 'swedencentral'
 
 @description('Data location for ACS data residency compliance')

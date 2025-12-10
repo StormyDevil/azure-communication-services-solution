@@ -35,9 +35,10 @@ param functionAppId string = ''
 // ============================================================================
 
 // Event Grid System Topic for ACS events
+// Note: ACS is a global service, so the system topic must use 'global' location
 resource eventGridTopic 'Microsoft.EventGrid/systemTopics@2024-06-01-preview' = {
   name: name
-  location: location
+  location: 'global'
   tags: tags
   properties: {
     source: communicationServicesId

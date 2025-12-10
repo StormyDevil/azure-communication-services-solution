@@ -45,17 +45,36 @@ This solution deploys a **Well-Architected** Azure Communication Services (ACS) 
 # Navigate to the solution directory
 cd infra/bicep/acs-solution
 
-# Deploy to development environment
-pwsh ./deploy.ps1 -Environment dev -Location swedencentral
+# Deploy to development environment (interactive location selection)
+pwsh ./deploy.ps1 -Environment dev
+
+# Deploy to a specific location
+pwsh ./deploy.ps1 -Environment dev -Location eastus
 
 # Deploy to production
-pwsh ./deploy.ps1 -Environment prod -Location swedencentral
+pwsh ./deploy.ps1 -Environment prod -Location westeurope
 ```
 
 ### What-If (Preview changes without deploying)
 
 ```bash
 pwsh ./deploy.ps1 -Environment dev -WhatIf
+```
+
+### Cleanup (Delete Resources)
+
+```bash
+# Delete a specific environment
+pwsh ./cleanup.ps1 -Environment dev
+
+# Delete a specific resource group
+pwsh ./cleanup.ps1 -ResourceGroupName rg-acs-solution-dev-001
+
+# Delete all ACS solution resource groups (use with caution)
+pwsh ./cleanup.ps1 -All
+
+# Preview what would be deleted
+pwsh ./cleanup.ps1 -WhatIf
 ```
 
 ## 📁 File Structure
@@ -67,6 +86,7 @@ acs-solution/
 │   ├── main.dev.bicepparam     # Development parameters
 │   ├── main.prod.bicepparam    # Production parameters
 ├── deploy.ps1              # Deployment script
+├── cleanup.ps1             # Resource cleanup script
 ├── README.md               # This file
 ├── modules/
 │   ├── communication-services.bicep  # ACS resource

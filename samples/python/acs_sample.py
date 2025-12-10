@@ -291,11 +291,18 @@ class ChatService:
         try:
             user, token_response = self.identity_client.create_user_and_token(scopes=["chat"])
             
+            # Handle expires_on - might be datetime or string depending on SDK version
+            expires_on = token_response.expires_on
+            if hasattr(expires_on, 'isoformat'):
+                expires_on = expires_on.isoformat()
+            else:
+                expires_on = str(expires_on)
+            
             return {
                 "success": True,
                 "user_id": user.properties["id"],
                 "token": token_response.token,
-                "expires_on": token_response.expires_on.isoformat()
+                "expires_on": expires_on
             }
         except Exception as e:
             return {
