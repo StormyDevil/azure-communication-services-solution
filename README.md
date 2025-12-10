@@ -1,5 +1,13 @@
 # Azure Communication Services Solution
 
+> **Built with [Agentic InfraOps](https://github.com/jonathan-vella/azure-agentic-infraops)** - Azure infrastructure engineered by AI agents using GitHub Copilot.
+
+## 💡 Original Request
+
+*"I'm a partner solutions architect in infrastructure. Help me understand what Azure Communication Services is and walk me through building the basic solution using CAF, WAF, and Azure Landing Zones. Generate an architecture diagram, add additional capabilities, and create sample application code using the ACS SDK."*
+
+---
+
 This solution deploys a **Well-Architected** Azure Communication Services (ACS) infrastructure aligned with:
 
 - ☁️ **Cloud Adoption Framework (CAF)** - Governance, naming conventions, tagging
